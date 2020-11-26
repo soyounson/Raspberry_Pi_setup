@@ -24,7 +24,7 @@ Easy way: download [Raspberry Pi Imager](https://www.raspberrypi.org/software/) 
 * Run Etcher and select the Raspberry Pi OS image and SD card drive. Then, click burn.
 * Unmount the SD card.
 
-### Problem... 
+### Problem (1) : Raspberry cannot read my SD card
  When I mount Raspberry's SD card, I got the message...
 ```
 Kernel panic-not syncing:
@@ -55,6 +55,39 @@ open your terminal,
 ```
 pi@raspberrypi: ~ $ python test_video.py
 ``` 
+
+### Problem (2) : Internet connect bc of date/time dont match
+On Chrome, I got the message :
+`Your connection is not private.
+Attackers might be trying to steal your information from ... 
+(for example, passwords, messages, or credit cards.) Learn more
+NET::ERR_CERT_DATE_INVALID`
+Check my Raspberry Pi, date and time are wrong although I set right time zone. If you get other message, check this blog to explain [How to Fix Your Connection is Not Private Error in Chrome (18 Tips)](https://kinsta.com/blog/your-connection-is-not-private/)
+* Step 1 
+`Preferences`→`Raspberry Pi Configuration`→`Localisation`
+check your `Timezone: Set Timezone...` and `WiFi Country: Set WiFi Country...`
+* Step 2
+My setting is good but the date and time are still wrong.
+Open your terminal, check your time zone again with command line
+```
+pi@raspberrypi: ~ $ sudo raspi-config
+Current default time zone: 'Europe/Paris'
+Local time is now:      Thu Aug 20 14:18:04 CEST 2020.
+Universal Time is now:  Thu Aug 20 12:18:04 UTC 2020.
+```
+ewwwwwwww.....so, manually set the time to be correct as described on [Raspberry Pi blog](https://raspberrypi.stackexchange.com/questions/59860/time-and-timezone-issues-on-raspberry-pi)
+```
+pi@raspberrypi: ~ $ sudo raspi-config
+Current default time zone: 'Europe/Paris'
+Local time is now:      Thu Aug 20 14:18:04 CEST 2020.
+Universal Time is now:  Thu Aug 20 12:18:04 UTC 2020.
+```
+Still...wrong date and time. So, set exact date and time.
+```
+pi@raspberrypi: ~ $ sudo date -s "11/26/2020 18:39"
+Thu 26 Nov 2020 06:39:00 PM CET
+```
+Now, your date and time are updated! Then, connect your wifi again. It works perfectly.
 ### Setup of 3.5 inch RPi LCD monitor (C)
 > ...coming soon
 
