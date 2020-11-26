@@ -58,11 +58,15 @@ pi@raspberrypi: ~ $ python test_video.py
 
 ### Problem (2) : Internet connect bc of date/time dont match
 On Chrome, I got the message :
-`Your connection is not private.
-Attackers might be trying to steal your information from ... 
+> Your connection is not private.
+
+> Attackers might be trying to steal your information from ... 
 (for example, passwords, messages, or credit cards.) Learn more
-NET::ERR_CERT_DATE_INVALID`
-Check my Raspberry Pi, date and time are wrong although I set right time zone. If you get other message, check this blog to explain [How to Fix Your Connection is Not Private Error in Chrome (18 Tips)](https://kinsta.com/blog/your-connection-is-not-private/)
+
+> NET::ERR_CERT_DATE_INVALID
+
+Check date and time. If you get other message, check this blog to explain [How to Fix Your Connection is Not Private Error in Chrome (18 Tips)](https://kinsta.com/blog/your-connection-is-not-private/).
+To solve this problem,
 * Step 1 
 `Preferences`→`Raspberry Pi Configuration`→`Localisation`
 check your `Timezone: Set Timezone...` and `WiFi Country: Set WiFi Country...`
@@ -75,7 +79,7 @@ Current default time zone: 'Europe/Paris'
 Local time is now:      Thu Aug 20 14:18:04 CEST 2020.
 Universal Time is now:  Thu Aug 20 12:18:04 UTC 2020.
 ```
-ewwwwwwww.....so, manually set the time to be correct as described on [Raspberry Pi blog](https://raspberrypi.stackexchange.com/questions/59860/time-and-timezone-issues-on-raspberry-pi)
+ewwwwwwww :rage: .....so, manually set the time to be correct as described on [Raspberry Pi blog](https://raspberrypi.stackexchange.com/questions/59860/time-and-timezone-issues-on-raspberry-pi)
 ```
 pi@raspberrypi: ~ $ sudo raspi-config
 Current default time zone: 'Europe/Paris'
