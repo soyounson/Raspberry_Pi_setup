@@ -36,11 +36,7 @@ In my case, I just formatted the SD card again and then reinstalled Raspberry OS
 ### Rapberry camera 
 * Mount your Raspberry camera properly
 * Go to `Preferences`→`Raspberry Pi Configuration` `Interfaces`, then make enabled camera and reboot your Raspberry Pi [details in Korean, 한국어 설명](https://blog.naver.com/ljy9378/221430169621).
-<div>
-![raspberry_pi_configuration_camera](https://user-images.githubusercontent.com/40614421/100364227-1ececc80-2ffe-11eb-8d3c-16ebfaa926ca.png)
-</div>
-
-* To test your camera, please run attached files in the repository [ref, 라즈베리파이 CCTV](https://m.blog.naver.com/PostView.nhn?blogId=einsbon&logNo=221215848541&proxyReferer=https:%2F%2Fwww.google.com%2F). The blog(written in only Korean) explains well. 
+* To test your camera, please run attached files in the repository. The codes are copied from the blog, [라즈베리파이 CCTV](https://m.blog.naver.com/PostView.nhn?blogId=einsbon&logNo=221215848541&proxyReferer=https:%2F%2Fwww.google.com%2F) written in only Korean but it explains a process well. 
 #### take a photo
 clone pythons codes on your folder.
 ```
