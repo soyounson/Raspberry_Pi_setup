@@ -68,7 +68,7 @@ To solve this problem,
 check your `Timezone: Set Timezone...` and `WiFi Country: Set WiFi Country...`
 * Step 2
 My setting is good but the date and time are still wrong.
-Open your terminal, check your time zone again with command line
+Open your terminal, check your time zone again from command line
 ```
 pi@raspberrypi: ~ $ sudo raspi-config
 Current default time zone: 'Europe/Paris'
@@ -89,16 +89,42 @@ Thu 26 Nov 2020 06:39:00 PM CET
 ```
 Now, your date and time are updated! Then, connect your wifi again. It works perfectly.
 ### Setup of 3.5 inch RPi LCD monitor (C)
-> ...coming soon
-
-### Shutdown Raspberry Pi 4
-* Type command in terminal, 
+Open the terminal to install the touch driver (Raspberry Pi MUST be connected to the network!) 
+Download driver on [waveshare site](https://www.waveshare.com/wiki/3.5inch_RPi_LCD_(C))
 ```
-sudo shutdown -h now
+pi@raspberrypi: ~ $ git clone https://github.com/waveshare/LCD-show.git
+``` 
+After installing the driver, go to the directory
+``` 
+pi@raspberrypi: ~ $ cd LCD-show/
+pi@raspberrypi: ~ $ chmod +x LCD35C-show
+pi@raspberrypi: ~ $ ./LCD35C-show
+``` 
+Then, automatically reboot the Raspberry Pi. Here, HDMI monitor doesn't show screen. 
+Now, connect the LCD monitor to Rasberry Pi.  
+### Possible problems..
+possible problems : overscan, rotation, screen size...
+Get more information on [Raspberry Pi Display Troubleshooting](https://www.raspberrypi.org/documentation/hardware/display/troubleshooting.md) and [Raspberry configuration](https://www.raspberrypi.org/documentation/configuration/raspi-config.md)
+Briefly, open the configuration tool from command line
+``` 
+pi@raspberrypi: ~ $ sudo raspi-config
+``` 
+or fix some problems with config.txt
+``` 
+pi@raspberrypi: ~ $ sudo nano /boot/config.txt
+``` 
+After then, save modified file with `Ctrl+X` and reboot Raspberry Pi
+``` 
+pi@raspberrypi: ~ $ sudo reboot
+``` 
+### Shutdown Raspberry Pi 4
+* In the terminal, 
+```
+pi@raspberrypi: ~ $ sudo shutdown -h now
 ```
 or 
 ```
-sudo halt
+pi@raspberrypi: ~ $ sudo halt
 ```
 * Wait for the LED to stop flashing on the Raspberry Pi (additionally 5 secs). 
 * Turn off the power strip (Raspberry Pi power supply).
