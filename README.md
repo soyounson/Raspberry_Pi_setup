@@ -120,7 +120,8 @@ pi@raspberrypi: ~ $ sudo reboot
 ``` 
 #### Install OpenCV 4.2.0 on Raspberry Pi
 Follow [installation instructions on Github](https://github.com/dltpdn/opencv-for-rpi/releases).
-Detailed explanation in Korean can be found [here](https://github.com/dltpdn/opencv-for-rpi).
+All details in Korean can be found [here](https://github.com/dltpdn/opencv-for-rpi).
+
 open your terminal, update first and download release file
 ```
 pi@raspberrypi: ~ $ sudo apt-get update
