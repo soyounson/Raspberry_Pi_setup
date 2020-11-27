@@ -33,7 +33,7 @@ VFS: unable to mount root fs on unknown- block(179,2)
 There are many reasons to generate this problem. You can find some solutions on [Raspberry pi forum](https://raspberrypi.stackexchange.com/questions/40854/kernel-panic-not-syncing-vfs-unable-to-mount-root-fs-on-unknown-block179-6). If you can understand Korean, please check here: [커널 패닉 동기화되지 않음 : VFS : NOOBS 위에서 Raspbian을 실행중인 알 수없는 블록 (179,6)에 루트 fs를 마운트 할 수 없음](https://qastack.kr/raspberrypi/40854/kernel-panic-not-syncing-vfs-unable-to-mount-root-fs-on-unknown-block179-6) or [라즈베리파이 커널 패닉](https://stupid86.tistory.com/entry/%EB%9D%BC%EC%A6%88%EB%B2%A0%EB%A6%AC%ED%8C%8C%EC%9D%B4-%EC%BB%A4%EB%84%90-%ED%8C%A8%EB%8B%89)
 In my case, I just formatted the SD card again and then reinstalled Raspberry OS using [Raspberry Pi Imager](https://www.raspberrypi.org/software/). It is a much easier way personally. 
 
-### Rapberry camera 
+### Raspberry camera 
 * Mount your Raspberry camera properly
 * Go to `Preferences`→`Raspberry Pi Configuration` `Interfaces`, then make enabled camera and reboot your Raspberry Pi [details in Korean, 한국어 설명](https://blog.naver.com/ljy9378/221430169621).
 * To test your camera, please run attached files in the repository. The codes are copied from the blog, [라즈베리파이 CCTV](https://m.blog.naver.com/PostView.nhn?blogId=einsbon&logNo=221215848541&proxyReferer=https:%2F%2Fwww.google.com%2F) written in only Korean but it explains a process well. 
@@ -52,7 +52,7 @@ open your terminal,
 pi@raspberrypi: ~ $ python test_video.py
 ``` 
 
-### Problem (2) : Internet connect bc of date/time dont match
+### Problem (2) : Internet connect bc date and time don't match
 On Chrome, I got the message :
 > Your connection is not private.
 
@@ -87,7 +87,7 @@ Still...wrong date and time. So, set exact date and time.
 pi@raspberrypi: ~ $ sudo date -s "11/26/2020 18:39"
 Thu 26 Nov 2020 06:39:00 PM CET
 ```
-Now, your date and time are updated! Then, connect your wifi again. It works perfectly.
+Now, your date and time are updated! Then, connect to wifi again. It works perfectly.
 ### Setup of 3.5 inch RPi LCD monitor (C)
 Open the terminal to install the touch driver (Raspberry Pi MUST be connected to the network!) 
 Download driver on [waveshare site](https://www.waveshare.com/wiki/3.5inch_RPi_LCD_(C))
@@ -101,9 +101,10 @@ pi@raspberrypi: ~ $ chmod +x LCD35C-show
 pi@raspberrypi: ~ $ ./LCD35C-show
 ``` 
 Then, automatically reboot the Raspberry Pi. Here, HDMI monitor doesn't show screen. 
-Now, connect the LCD monitor to Rasberry Pi.  
-### Possible problems..
-possible problems : overscan, rotation, screen size...
+Now, connect the LCD monitor to Raspberry Pi.  
+
+### Possible problems...
+possible problems: overscan, rotation, screen size...
 Get more information on [Raspberry Pi Display Troubleshooting](https://www.raspberrypi.org/documentation/hardware/display/troubleshooting.md) and [Raspberry configuration](https://www.raspberrypi.org/documentation/configuration/raspi-config.md)
 Briefly, open the configuration tool from command line
 ``` 
