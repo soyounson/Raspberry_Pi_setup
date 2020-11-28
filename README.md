@@ -24,7 +24,7 @@ Easy way: download [Raspberry Pi Imager](https://www.raspberrypi.org/software/) 
 * Run Etcher and select the Raspberry Pi OS image and SD card drive. Then, click burn.
 * Unmount the SD card.
 
-### Problem (1) : Raspberry cannot read my SD card
+### Problem (1) : Cannot read SD card
  When I mount Raspberry's SD card, I got the message...
 ```
 Kernel panic-not syncing:
@@ -52,7 +52,7 @@ open your terminal,
 pi@raspberrypi: ~ $ python test_video.py
 ``` 
 
-### Problem (2) : Internet connect bc date and time don't match
+### Problem (2) : Cannot connect to Internet bc date and time don't match
 On Chrome, I got the message :
 > Your connection is not private.
 
@@ -88,7 +88,7 @@ pi@raspberrypi: ~ $ sudo date -s "11/26/2020 18:39"
 Thu 26 Nov 2020 06:39:00 PM CET
 ```
 Now, your date and time are updated! Then, connect to wifi again. It works perfectly.
-### Setup of 3.5 inch RPi LCD monitor (C)
+### Set up 3.5 inch RPi LCD monitor (C)
 Open the terminal to install the touch driver (Raspberry Pi MUST be connected to the network!) 
 Download driver on [waveshare site](https://www.waveshare.com/wiki/3.5inch_RPi_LCD_(C))
 ```
@@ -103,7 +103,7 @@ pi@raspberrypi: ~ $ ./LCD35C-show
 Then, automatically reboot the Raspberry Pi. Here, HDMI monitor doesn't show screen. 
 Now, connect the LCD monitor to Raspberry Pi.  
 
-### Possible problems...
+### Problem (3) :  Other possibilities...
 possible problems: overscan, rotation, screen size...
 Get more information on [Raspberry Pi Display Troubleshooting](https://www.raspberrypi.org/documentation/hardware/display/troubleshooting.md) and [Raspberry configuration](https://www.raspberrypi.org/documentation/configuration/raspi-config.md)
 Briefly, open the configuration tool from command line
@@ -118,7 +118,44 @@ After then, save modified file with `Ctrl+X` and reboot Raspberry Pi
 ``` 
 pi@raspberrypi: ~ $ sudo reboot
 ``` 
-#### Install OpenCV 4.2.0 on Raspberry Pi
+### Set up VPN server
+First, open terminal in Raspberry pi
+( If you can understand Korean, please check here: [IT에 취.하.개](https://hongku.tistory.com/187))
+``` 
+pi@raspberrypi: ~ $ sudo apt-get install tightvncserver
+``` 
+Then, set password
+``` 
+pi@raspberrypi: ~ $ vncserver
+Your will require a password to access your desktops.
+Password:
+Warning: password truncated to the length of 8.
+Verify:
+Would you like to enter a view-only password (y/n)? y
+Password:
+Warning: password truncated to the length of 8.
+Verify:
+``` 
+Okay, now, install VNC viewer on Mac, Window, Linux, Ubuntus...
+* download [VNC viewer](https://www.realvnc.com/en/connect/download/viewer/)
+* put Raspberry pi's ` IP address`  + ` :1`  as seen below:
+<div>
+[\\\pic]
+</div>
+(get your Raspberry pi's IP address from `ifconfig`)
+``` 
+pi@raspberrypi: ~ $ ifconfig
+eth0   .....
+
+lo     .....
+
+wlan0  Link encap:Ethernet a4:xx:xx:xx:xx:xx 
+	   inet addr: 11.222.333.444 Mask: 255.255.255.0
+       ...
+``` 
+IP address is `11.222.333.444` 
+
+### Install OpenCV 4.2.0 on Raspberry Pi
 Follow [installation instructions on Github](https://github.com/dltpdn/opencv-for-rpi/releases).
 All details in Korean can be found [here](https://github.com/dltpdn/opencv-for-rpi).
 
