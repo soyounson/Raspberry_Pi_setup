@@ -1,12 +1,12 @@
-:black_heart: Simple setup of the Raspberry Pi 4
+## :black_heart: Simple setup of the Raspberry Pi 4 :strawberry:
 
-### ☺︎ Format your SD card 
+### ☺︎ Format your SD card :floppy_disk:
 Download [SD Memory Card Formatter](https://www.sdcard.org/downloads/formatter/eula_mac/index.html) and format your SD card.
 <div>
 <img width="418" alt="01_SDcard_format" src="https://user-images.githubusercontent.com/40614421/100288068-2d71a100-2f76-11eb-907b-50c5cce93dc0.png">
 </div>
 
-### ☺︎ Download Raspberry Pi OS manually 
+### ☺︎ Download Raspberry Pi OS manually :shipit:
 Classic way: download [Raspberry os](https://www.raspberrypi.org/software/operating-systems/) and install it manually. 
 <div>
 <img width="1211" alt="Rasberry_pi_OS" src="https://user-images.githubusercontent.com/40614421/100364060-e0391200-2ffd-11eb-92f5-277aca79d131.png">
@@ -37,7 +37,7 @@ In my case, I just formatted the SD card again and then reinstalled Raspberry OS
 * Mount your Raspberry camera properly
 * Go to `Preferences`→`Raspberry Pi Configuration` `Interfaces`, then make enabled camera and reboot your Raspberry Pi [details in Korean, 한국어 설명](https://blog.naver.com/ljy9378/221430169621).
 * To test your camera, please run attached files in the repository. The codes are copied from the blog, [라즈베리파이 CCTV](https://m.blog.naver.com/PostView.nhn?blogId=einsbon&logNo=221215848541&proxyReferer=https:%2F%2Fwww.google.com%2F) written in only Korean but it explains a process well. 
-#### take a photo
+#### take a photo :camera:
 clone pythons codes on your folder.
 ```
 pi@raspberrypi: ~ $ git clone https://github.com/soyounson/Raspberry_Pi_setup.git
@@ -46,7 +46,7 @@ open your terminal,
 ```
 pi@raspberrypi: ~ $ python test_photo.py
 ``` 
-#### record a video
+#### record a video :video_camera:
 open your terminal, 
 ```
 pi@raspberrypi: ~ $ python test_video.py
@@ -88,7 +88,7 @@ pi@raspberrypi: ~ $ sudo date -s "11/26/2020 18:39"
 Thu 26 Nov 2020 06:39:00 PM CET
 ```
 Now, your date and time are updated! Then, connect to wifi again. It works perfectly.
-### ☺︎ Set up 3.5 inch RPi LCD monitor (C)
+### ☺︎ Set up 3.5 inch RPi LCD monitor (C) :computer:
 Open the terminal to install the touch driver (Raspberry Pi MUST be connected to the network!) 
 Download driver on [waveshare site](https://www.waveshare.com/wiki/3.5inch_RPi_LCD_(C))
 ```
